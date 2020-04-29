@@ -11,6 +11,13 @@ function getDogImages(num) {
 
 function displayResults(json) {
   console.log(json);
+
+  let dogs = json.message;
+  let dogsHtml = '';
+  for (let i = 0; i < dogs.length; i++) {
+    dogsHtml += `<div><img src="${dogs[i]}"></div>`;
+  }
+  $('#results').html(dogsHtml);
 }
 
 function handleSubmit() {
